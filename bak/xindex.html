@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>KRYPTOBOOKZ</title>  
+ 
+    <!-- <p>
+        <h2>TODO:</h2> this page will HOST the first ever: CRYPTOBOOK!<br>
+        QUESTION: what will it do?<br>
+        On LOAD, Query Contract with SERIES_INDEX (SIDX)<BR>
+        Or LOAD, OpenSea API, with EPIC_INDEX (EPID)<br> 
+        MENU<br>
+        SHOW: MARQUEE_PAGE of SERIES.<br>
+        SHOW: SERIES_TITLE.<br>
+        SHOW: EPIC_TITLE. <br>
+        <h3>INTERACTIONS</h3>
+        Each VIEW will have GRID9 LINKS. <br>
+        Everything populated from METANET <br>
+        GET BLOCKCHAIN, is a DATESTAMP <br>
+        In Web3, that DATESTAMP is IDX2IPFS.<br>
+        METANET returns, ALL LINKS and CONTENT. <br>
+        GET IPFS, DISPLAY CONTENT. <br> 
+    </p> -->
+
+    <style>
+        .fas::after { font-family: Verdana}
+        *, ::before, ::after { box-sizing: border-box; }
+        body{ 
+            color:steelblue; text-align:center; font-family:Verdana; 
+            background-color: black; 
+            background-image:linear-gradient(to top right, 
+                darkslateblue, #002, #000, #002, #004,  steelblue);
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                    user-select: none; /* Non-prefixed version, currently*/
+
+            height:100%;
+        }
+        .menuBtn{
+            background: #1b0d21;
+            margin: 0.222em;
+            padding: 0.444em;
+            border-radius: 13px;
+            font-family: Verdana;
+            border: 1px solid skyblue;
+            text-shadow: 0.5px 1px 1px #fa015f;
+        }
+        .menuBtn:hover{ border-radius:10px; border:1px solid steelblue; cursor: pointer; }
+
+        .hoverGlow:hover{
+            border: 3px solid #8f7d71;
+            box-shadow: 1px 1px 7px 2px skyblue;
+        }
+
+        .hoverGlow:active{
+            border: 4px solid #e0b99f;
+            box-shadow: 2px 2px 7px 2px rgb(174, 216, 233);
+        }
+
+        hr{ border: 1px solid blue; }
+
+    </style>
+</head>
+<body>
+
+    <style>
+        .tradeMark{
+    position: relative;
+    font-size:0.222em;
+    line-height: 0;
+    vertical-align: baseline;
+    bottom: -0.666em;
+        }
+        .sonicOn{box-shadow: 0px 0px 4px lime;}
+        .sonicOff{ box-shadow: 0px 0px 6px red !important; }
+
+        .steelNeonIconBtn {
+                font-family: verdana;
+            font-size: 1.3em;
+            border: #748696 solid 1px;
+                background-color: black;
+                border-radius: 20px;
+                /* height: 32px; */
+                /* width: 64px; */
+                cursor: default;
+                user-select: none;
+                outline: none;  
+                text-align: center;
+                text-shadow: 0 1px 0 purple;
+                line-height: 30px;
+                    color: steelblue;
+                border: 1px solid steelblue;
+                cursor: pointer;
+                width:2em;
+                height:2em;
+            }
+
+            .mainGalleryIMG{
+                width: 95%;
+                max-width: 350px;
+                border-radius: 1em;
+                border: solid 1px skyblue;
+                box-shadow: 1px 2px 6px 0px yellow;
+            }
+
+            .galleryINFO_short{
+                background: black;
+                max-width: 22em;
+                margin: 0 auto;
+                border-radius: 1em;
+                border: solid 1px steelblue;
+                box-shadow: 1px 1px 1px blue;
+                padding: 0.777em;
+                margin-top: 0.555em;
+                margin-bottom: 1em;
+            }
+            .galleryINFO_long{
+                background: black;
+                margin: 0 auto;
+                border-radius: 1em;
+                border: solid 1px skyblue;
+                box-shadow: 1px 1px 1px steelblue;
+                padding: 0.777em;
+                margin-top: 0.555em;
+                margin-bottom: 1em;
+                height: 12em;
+                max-width: 100%;
+            }
+            .galleryItemFrame{
+                cursor:pointer;
+            }
+      </style>
+
+<!-- TOP MENU -->
+<section id="topMenuFrame" style="padding: 0.444em; display:none;">
+    <!-- <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span> -->
+    <button id="topNavBtn6" class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-home" style="color:darkorange">&nbsp;WEBz</i></a>
+    <button id="topNavBtn7" class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-photo-video" style="color:lightskyblue">&nbsp;CARDz</i></a>
+    <button id="topNavBtn8"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-book" style="color:darkseagreen">&nbsp;BITz</i></a>
+    <button id="topNavBtn9"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-music" style="color:mediumpurple">&nbsp;JAMz</i></a>
+    <button id="topNavBtn10"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-video" style="color:indianred">&nbsp;VIDz</i></a>
+    <button id="topNavBtn11"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-book-open" style="color:yellow">&nbsp;BOOKz</i></a>
+</section>
+
+<!-- GRID9 MINIMUM EXAMPLE | ui side -->
+<style>.disabledBTN{ color: #677093; background: #444444; border: 1px solid #673ab7; opacity: 0.444; cursor: not-allowed;}</style>
+<style>.glowBTN{box-shadow: 0px -1px 8px 4px #525245;}</style>
+<button id="mainTOPLFTBTN" class="steelNeonIconBtn" style='position:fixed;top:1%;left:0.5%;z-index:1111'><i class="fa fa-bars"></i></button>
+<!-- <a href="https://netcinematics.github.io/KRYPTOSPAZE/" target="_blank">
+    <button id="mainTOPRGTBTN" class="steelNeonIconBtn" style='position:fixed;top:1%;right:0.5%;z-index:1111'><i class="fa fa-house-damage"></i></button>
+</a> -->
+<button id="mainLFTBTN" class="steelNeonIconBtn disabledBTN" style='position:fixed;top:33%;left:1%;z-index:1111'><i class="fa fa-chevron-circle-left" style="font-size:1em;"></i></button>
+<button id="mainRGTBTN" class="steelNeonIconBtn  disabledBTN" style='position:fixed;top:33%;right:1%;z-index:1111'><i class="fa fa-chevron-circle-right" style="font-size:1em;"></i></button>
+<button id="mainUPBTN" class="steelNeonIconBtn disabledBTN" style='position:fixed;top:50%;left:1%;z-index:1111'><i class="fa fa-chevron-circle-up" style="font-size:1em;"></i></button>
+<button id="mainDWNBTN" class="steelNeonIconBtn glowBTN" style='position:fixed;top:50%;right:1%;z-index:1111'><i class="fa fa-chevron-circle-down" style="font-size:1em;"></i></button>
+<button id="mainSONICBTN" class="steelNeonIconBtn hoverGlow sonicOff" style='position:fixed;top:1%;right:0.5%;z-index:1111'><i class="fa fa-volume-off" style="font-size:1em;"></i></button>
+<!-- <button id="mainSONICBTN" class="steelNeonIconBtn hoverGlow sonicOff" style='position:fixed;top:16%;right:1%;z-index:1111'><i class="fa fa-volume-off" style="font-size:1em;"></i></button> -->
+
+<a href="https://linktr.ee/spazefalcon" target="_blank">
+    <img src="./images/linktree.png" class="hoverGlow" style="width:2em;border-radius:100%;position:fixed;bottom:10%;right: 1%;border: 2px solid white;
+    padding: 2px;"/></a>
+<a href="https://opensea.io/accounts/kryptospaze" target="_blank">
+    <img src="./images/osblue.png" class="hoverGlow" style="width:2em;border-radius:100%;position:fixed;bottom:3%;right: 1%;"/></a>
+<a href="https://twitter.com/spazefalcon" target="_blank">
+    <img src="./images/twtblue.png" class="hoverGlow" style="width:2em;border-radius:100%;position:fixed;bottom:3%;left: 1%;border: 2px solid white;
+    padding: 1px;"/></a>
+<a href="https://www.instagram.com/spazefalcon/" target="_blank">
+    <img src="./images/instablue.png" class="hoverGlow" style="width:2em;border-radius:100%;position:fixed;bottom:10%;left: 1%;border: 2px solid white;
+    padding: 1px;"/></a>
+<!-- <aside id="mainPageNums" style='position:fixed;bottom:44%;right:1.444em;z-index:1111;font-size: 0.666em;'></aside> -->
+<aside id="mintDate" style='position:fixed;bottom:1%;right:1%;z-index:1111;font-size: 0.666em;font-style: italic;'>1-<script>document.write( new Date().getFullYear() );</script></aside>
+<article>
+    <section id="GalleryDISPLAYFRAME1" style="display:none; padding:0.222em; border:1px solid darkslateblue; border-radius:13px; width:85%; margin:0 auto; border-radius:22px; max-width: 44em;">hi </section>
+</article>
+<style>
+/*Here is Mobile Breakpoint Template:
+put all your mobile styles above*/
+
+/* mobile styles here */
+@media only screen and (min-width: 350px) {
+    .pageTitleTXT{
+        font-size: 1.444em;
+    }
+
+}
+@media only screen and (max-width: 350px) {
+
+    .bit-spacer{
+        height: 2.222em !important;
+    }
+}
+/*tablet styles here*/
+@media only screen and (min-width: 550px) {
+    .pageTitleTXT{
+        font-size: 1.444em;
+    }
+
+
+}
+/*desktop styles here*/
+@media only screen and (min-width: 800px) {
+    .pageTitleTXT{
+        font-size: 3.222em;
+    }
+
+    /* .bluesteel-border-frame{
+        border-width:0px; 
+    } */
+}
+
+    </style>
+
+    <!-- <section id="statusDisplay1">< ~ ></section> -->
+
+
+<article>
+    <section id="nftDisplay1" style="display:none; padding:0.222em; border:1px solid darkslateblue; border-radius:13px; width:85%; margin:0 auto; border-radius:22px; max-width: 44em;"> </section>
+</article>
+<article>
+    <!-- THIS IS BECOMING THE FRAME FOR THE PAGE SLIDE. -->
+    <section id="KRYPTOBOOKFrame1" style="padding:0.222em; border:1px solid darkslateblue; border-radius:13px; width:85%; margin:0 auto; border-radius:22px; max-width: 70em;overflow:hidden;"> </section>
+</article>
+
+<section id="subTitleFrame" style="margin-top:0;" >
+    <div id="subTitle" class="pageTitleTXT"  style="margin-top:0.444em;color:#5f00b5;padding:0.111em; text-shadow: 5px -6px 16px blue;">COZMOSPAZE<span class="tradeMark">&trade;</span></div>
+</section>
+
+<section style="padding: 0.444em;">
+    <!-- <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span> -->
+    <button id="btmNavBtn6" class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-home" style="color:darkorange">&nbsp;WEBz</i></a>
+    <button id="btmNavBtn7" class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-photo-video" style="color:lightskyblue">&nbsp;CARDz</i></a>
+    <button id="btmNavBtn8"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-book" style="color:darkseagreen">&nbsp;BITz</i></a>
+    <button id="btmNavBtn9"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-music" style="color:mediumpurple">&nbsp;JAMz</i></a>
+    <button id="btmNavBtn10"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-video" style="color:indianred">&nbsp;VIDz</i></a>
+    <button id="btmNavBtn11"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-book-open" style="color:yellow">&nbsp;BOOKz</i></a>
+</section>
+    
+
+<footer>
+    <div id="copyright" style="background: #000004;	box-shadow: 1px 1px 8px 0px lightyellow;
+        border-radius: 13px; margin: 0.888em; padding: 0.888em; font-size: 0.888em;padding-top: 0;margin-top: 1.666em;">
+        <footer style="padding:0.777em;">
+            <span style="font-style:italic;color:#4b00ff">by spazeFalcon </span>
+            <span>&nbsp;|&nbsp;</span><span>NetCinematics.llc</span><span>&nbsp;|&nbsp;</span>
+            <span id="statusDisplay1" style="font-size: 0.666em; color: slateblue;">ETHEREUM NFTs on OpenSea</span>
+        </footer>
+        <div style="margin-bottom:0.666em;"><a href="https://indreams.me/" target="_blank" >Made in Dreams</a>&nbsp; <a href="https://www.bandlab.com/cyberfalcon4" target="_blank" >Music in BandLab</a> &nbsp;<a href="https://opensea.io/kryptospaze" target="_blank" >OpenSea.io</a></div>
+           
+        <div class="menu" style="font-size:0.666em;">
+            <div style="line-height: 1.444em;">  
+                 ~CozmoSpaze™, KryptoBookz™, OrbyOrbot™, DocCozmo™, Dr.Becky™, MaxzaDratz™, Marzamoon™, SpazeBotz™  
+                 <!-- 2020 - <script>document.write( new Date().getFullYear() );</script> -->
+            </div>
+        </div>
+        <!-- <div class="menu"> -->
+          <div style="margin-top:0.666em;">2020 - <script>document.write( new Date().getFullYear() );</script> © NetCinematics llc. All rights reserved.
+            </div>
+        <!-- </div> -->
+    </div>
+</footer>
+
+</body>
+
+<script>
+    window.ui = {}; //GRID9 - pre data integration 
+    ui.mainSONICBTN = document.getElementById('mainSONICBTN');  
+    ui.mainSONICBTN.addEventListener("click", ()=> { 
+        var toggleOn = ui.mainSONICBTN.classList.contains('sonicOff'); //if sound is on-.
+        if(toggleOn){
+            ui.mainSONICBTN.classList.remove('sonicOff');
+            ui.mainSONICBTN.classList.add('sonicOn');
+            //   nx.sonics.on=1;
+        }else { //sound off
+            ui.mainSONICBTN.classList.remove('sonicOn');
+            ui.mainSONICBTN.classList.add('sonicOff');
+            //   nx.ui.audioToggle1.addClass('sonicOff');
+            //   nx.sonics.stopAllSonics();
+            //   nx.sonics.on=0;
+        }
+        if(kbz && kbz.toggleSound){ kbz.toggleSound(toggleOn) }
+    })      
+    ui.mintDate = document.getElementById('mintDate');  
+    // ui.mainPageNums = document.getElementById('mainPageNums');  
+    ui.topMenuFrame = document.getElementById('topMenuFrame');
+
+    ui.nftDisplay1 = document.getElementById('nftDisplay1'); 
+    ui.KRYPTOBOOKFrame1 = document.getElementById('KRYPTOBOOKFrame1'); 
+    ui.GalleryDISPLAYFRAME1 = document.getElementById('GalleryDISPLAYFRAME1'); 
+    ui.mainTOPLFTBTN = document.getElementById('mainTOPLFTBTN');
+    ui.mainTOPLFTBTN.addEventListener("click", ()=> {    mainMenuBtnClick();  })      
+    ui.mainDWNBTN = document.getElementById('mainDWNBTN');
+    ui.mainDWNBTN.addEventListener("click", ()=> { 
+        kbz.nextPage();
+    })      
+    ui.mainUPBTN = document.getElementById('mainUPBTN');
+    ui.mainUPBTN.addEventListener("click", ()=> { 
+        kbz.lastPage();
+    })  
+
+</script>
+
+<script type="module">
+    //LOAD-KRYPTOBOOKZ before view paint-.
+    import { kbz } from "./KBZ_ENGINE_1.1.1/kryptobookz.js";
+    window.kbz = kbz;
+    // console.log("x",kbz.viz);
+</script> 
+
+
+<script>
+// var onGalleryView = false, lastView = null;
+ui.onGalleryView = false; ui.lastView = null;
+var mainMenuBtnClick = function(){
+    ui.onGalleryView = !ui.onGalleryView;
+    if(ui.onGalleryView){ //show gallery
+        ui.topMenuFrame.style.display = 'block';
+        ui.GalleryDISPLAYFRAME1.style.display = 'block';
+        if(ui.nftDisplay1.style.display==='block'){ui.lastView=ui.nftDisplay1}
+        ui.nftDisplay1.style.display = 'none';
+        if(ui.KRYPTOBOOKFrame1.style.display==='block'){ui.lastView=ui.KRYPTOBOOKFrame1}
+        ui.KRYPTOBOOKFrame1.style.display = 'none';
+        
+    }else{ 
+        clearAllDisplays();
+        if(!ui.lastView){ui.lastView = ui.GalleryDISPLAYFRAME1}
+        // ui.nftDisplay1.style.display = 'none';
+        // ui.topMenuFrame.style.display = 'none';
+        // ui.GalleryDISPLAYFRAME1.style.display = 'none';
+        ui.lastView.style.display = 'block';
+    }
+    // showHideMainGallery();
+    scrollToTop();
+}
+// var showHideMainGallery = function(){
+//     if(onGalleryView){
+//         ui.GalleryDISPLAYFRAME1.style.display = 'block';
+//     }else{
+//         ui.GalleryDISPLAYFRAME1.style.display = 'none';
+//     }
+// }
+var scrollToTop = function () {
+    window.scrollTo(0,0);
+};    
+window.onbeforeunload = function () {
+    window.scrollTo(0,0);
+};
+
+function menuFn(e){ //ALL MENU BEHAVIOR in 1 FACTORY fn.
+    // debugger;
+    switch (e.target.parentElement.id){
+        case 'topNavBtn1':
+        case 'btmNavBtn1': window.open("https://netcinematics.github.io/KRYPTOSPAZE/", '_blank'); break;
+        case 'topNavBtn2':
+        case 'btmNavBtn2': kbz.MainVw.runDISPLAYFactory(2); break;
+        case 'topNavBtn3':
+        case 'btmNavBtn3': kbz.MainVw.runDISPLAYFactory(3); break;
+        case 'topNavBtn4':
+        case 'btmNavBtn4': kbz.MainVw.runDISPLAYFactory(4); break;
+        case 'topNavBtn5':
+        case 'btmNavBtn5': kbz.MainVw.runDISPLAYFactory(5); break;
+        case 'topNavBtn6':
+        case 'btmNavBtn6': window.open("https://netcinematics.github.io/KRYPTOSPAZE/", '_blank'); break;
+        case 'topNavBtn7':
+        case 'btmNavBtn7': kbz.MainVw.runDISPLAYFactory(2); break;
+        case 'topNavBtn8':
+        case 'btmNavBtn8': kbz.MainVw.runDISPLAYFactory(3); break;
+        case 'topNavBtn9':
+        case 'btmNavBtn9': kbz.MainVw.runDISPLAYFactory(4); break;
+        case 'topNavBtn10':
+        case 'btmNavBtn10' : kbz.MainVw.runDISPLAYFactory(5); break;
+        case 'topNavBtn11':
+        case 'btmNavBtn11' : kbz.MainVw.runDISPLAYFactory(7); break;
+        // mainMenuBtnClick();
+        // case 'btmNavBtn11' : kbz.MainVw.runDISPLAYFactory(11); break;
+        case 'topNavBtn12':
+        case 'btmNavBtn12' : kbz.MainVw.runDISPLAYFactory(12); break;
+        default : return;
+    }
+}
+
+let galleryBOOKClick  = function(e){
+
+    let tgtContent = e.currentTarget.id
+    clearAllDisplays();
+    
+    //Click ID to LINKPATH - with cID to METANET, from vis. 
+    // let LINKPATH = [{cID:'s1.e1.img1'},{cID:'s1.e1.txt1'}];
+    
+    //TODO get LINKPATH from METANET.
+    let LINKPATH = {bID:'s1.e1.ch1'};
+    loadBOOKDisplay(LINKPATH);
+}
+
+let galleryINFOClick  = function(e){ //called on FRAME, play will trigger this.
+    let tgtContent = e.currentTarget;
+    let tgtINFO_short = tgtContent.getElementsByClassName('galleryINFO_short')[0];    
+    let tgtINFO_long = tgtContent.getElementsByClassName('galleryINFO_long')[0];    
+
+    if(tgtContent.classList.contains('galleryINFOMAX')){ //Maximized already
+        tgtContent.classList.remove('galleryINFOMAX')
+        tgtINFO_short.style.display = 'block';
+        tgtINFO_long.style.display = 'none';
+    } else { //currently min
+        tgtContent.classList.add('galleryINFOMAX')
+        tgtINFO_short.style.display = 'none';
+        tgtINFO_long.style.display = 'block';        
+    }
+}
+
+let galleryPlayClick = function(e,bID){
+    let tgtContent = e.currentTarget.id
+    clearAllDisplays();
+    
+    //Click ID to LINKPATH - with cID to METANET, from vis. 
+    // let LINKPATH = [{cID:'s1.e1.img1'},{cID:'s1.e1.txt1'}];
+    
+    //TODO get LINKPATH from METANET.
+    // let LINKPATH = {bID:'s1.e1.ch1'};
+    // loadBOOKDisplay(LINKPATH);
+    loadBOOKDisplay({bID}); //todo remove extra object?
+
+}
+
+let clearAllDisplays = function(){
+    ui.nftDisplay1.style.display = 'none';
+    ui.topMenuFrame.style.display = 'none';
+    ui.GalleryDISPLAYFRAME1.style.display = 'none';
+    // ui.lastView.style.display = 'block';
+}
+
+//TODO move to vis?
+let loadBOOKDisplay = function(LINKPATH){
+
+    kbz.MainVw.runDISPLAYFactory(7,LINKPATH.bID);
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  
+    kbz.initPage();
+    kbz.initSonics();
+    kbz.loadGalleryView();
+    //dynamic NFT loading-.
+    const urlParams = new URLSearchParams(window.location.search);
+    let mode = parseInt(urlParams.get('m')); //mode for display
+    let idx = parseInt(urlParams.get('idx')); //idx for specific items-.
+    if(!idx){idx = null}
+    kbz.MainVw.idx = idx;
+    if(!mode){mode = 1} //gallery
+    // if(!mode){mode = 7} //kryptobook
+    // if(!mode){mode = 6} //display all
+    kbz.MainVw.runDISPLAYFactory(mode); //default load
+
+
+
+
+
+
+})
+</script>
+</html>
