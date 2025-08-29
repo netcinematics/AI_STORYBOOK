@@ -198,6 +198,10 @@ function initPage(){
                 // if (ui.GalleryDISPLAYFRAME1) { ui.GalleryDISPLAYFRAME1.style.display = 'none'; } 
                 // if (ui.itemDISPLAYFRAME1) { ui.itemDISPLAYFRAME1.style.display = 'none'; } 
                 //todo convert all of these to clear all displays()
+            } else if (mode === 13){
+                clearAllDisplays();
+                KRYPTOBOOKFrame1.style.display = 'block';                
+                setBIOPAGE();
             }
         //****************************************************************************
         // }); //END: GETNFT button click-.
@@ -251,6 +255,195 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
         }
     }
 
+    function setBIOPAGE(){
+        // debugger;
+        let pageFrame = document.createElement('section');
+        pageFrame.style.backgroundColor = 'black';
+        pageFrame.style.borderRadius = "10px";
+        pageFrame.style.padding = "0.111em";
+        // pageFrame.style.margin = "0.444em";
+        // pageFrame.style.marginBottom = "8.888%";
+        pageFrame.style.boxShadow = "1px 1px 20px 0px blue";
+        // pageFrame.classList.add('storybook-page');
+        pageFrame.id = 'BioPageFrame';//.replace('.','-'));
+        // console.log("render: ",bitz.IDX)
+
+        // let pageSpacer = document.createElement('section');
+        // pageSpacer.style.backgroundColor = 'black';
+        // pageSpacer.style.borderRadius = "10px";
+        // // pageSpacer.style.padding = "0.111em";
+        // pageSpacer.style.margin = "0.444em";
+        // pageSpacer.style.height = "4.444em";
+        // pageSpacer.style.fontSize = "8px";
+        // pageSpacer.style.paddingTop = "1.44em"
+        // pageSpacer.style.paddingRight = "1em"
+        // // pageSpacer.style.paddingTop = "auto"
+        // // pageSpacer.style.paddingBottom = "auto"
+        // pageSpacer.style.color = '#071d30';
+        // pageSpacer.style.textAlign = 'right';
+        // if(pgNum && pgTotal) { pageSpacer.innerText = `${pgNum}.${pgTotal}`; }                    //pageNUM
+        // // pageSpacer.style.marginBottom = "8.888%";
+        // pageSpacer.style.boxShadow = "1px 1px 20px 0px blue";
+        // pageSpacer.classList.add('bit-spacer');
+        // pageSpacer.id = "Spacer_" + bitz.IDX;
+        
+        // var IMGBIT = document.createElement('article');
+        // IMGBIT.style.backgroundColor = 'black';
+        // // IMGBIT.style.backgroundColor = getRandoColor();
+        // IMGBIT.style.border = "1px solid steelblue"
+        // if(document.body.clientWidth > 888){ IMGBIT.style.borderWidth = "0px";  } //RESPONSIVE
+        // IMGBIT.style.borderRadius = "13px"
+        // IMGBIT.style.padding = "0.888em"
+        // IMGBIT.style.margin = "0.88em auto"
+        // IMGBIT.style.maxWidth = "44em"
+        // IMGBIT.style.cursor = "pointer"
+        // IMGBIT.style.overflow = "hidden";     //CROP
+        // IMGBIT.style.marginBottom = "1em";   //CROP
+        // IMGBIT.classList.add('bluesteel-border-frame');
+
+        // var imgCard1 = 0;
+        // if(bitz.IMG){
+        //     imgCard1 = document.createElement('img'); //IMG  //OTHER IMAGE TYPES HERE
+        //     imgCard1.src = bitz.IMG; //large 600 size
+        //     imgCard1.style.width = "100%"
+        //     imgCard1.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
+        //     imgCard1.style.borderRadius = "18px"
+        //     // imgCard1.style.marginBottom = "-6.666em"     //CROP
+        //     // imgCard1.style.maxWidth = "444px";          //RESPONSIVE
+        //     imgCard1.style.width = "100%";//"136%";              //WIDTH
+        //     imgCard1.addEventListener("click", ()=> {
+        //         // imgCard1.showDetails = (imgCard1.showDetails) ? 0 : 1;
+        //         // if(imgCard1.showDetails){
+        //         //     imgCard1.style.marginBottom = "2.222em"
+        //         // }else{
+        //         //     imgCard1.style.marginBottom = "-6.666em"
+        //         // }
+        //     })
+        // } 
+
+        var TXTFRAME = 0;
+        // if(bitz.TXT){
+        TXTFRAME = document.createElement('article');
+        TXTFRAME.style.backgroundColor = 'black';
+        // TXTFRAME.style.backgroundColor = getRandoColor();
+        TXTFRAME.style.boxShadow = "0px 0px 20px 1px purple"
+        TXTFRAME.style.border = "1px solid steelblue"
+        TXTFRAME.style.borderRadius = "13px"
+        TXTFRAME.style.padding = "0.888em"
+        TXTFRAME.style.margin = "0.88em auto"
+        TXTFRAME.style.maxWidth = "42em"
+        TXTFRAME.style.cursor = "pointer"
+        TXTFRAME.style.overflow = "hidden";    
+        TXTFRAME.style.marginBottom = "1em";   
+        // TXTFRAME.style.marginTop = "1em";    //OVERLAP
+        TXTFRAME.style.borderTop = "none";    //OVERLAP
+
+        var QRCodeFRAME = 0;
+        // if(bitz.TXT){
+        QRCodeFRAME = document.createElement('article');
+        QRCodeFRAME.style.backgroundColor = 'black';
+        // TXTFRAME.style.backgroundColor = getRandoColor();
+        QRCodeFRAME.style.boxShadow = "0px 0px 20px 1px purple"
+        QRCodeFRAME.style.border = "1px solid steelblue"
+        QRCodeFRAME.style.borderRadius = "13px"
+        QRCodeFRAME.style.padding = "0.888em"
+        QRCodeFRAME.style.margin = "0.88em auto"
+        QRCodeFRAME.style.maxWidth = "42em"
+        QRCodeFRAME.style.cursor = "pointer"
+        QRCodeFRAME.style.overflow = "hidden";    
+        QRCodeFRAME.style.marginBottom = "1em";   
+        // TXTFRAME.style.marginTop = "1em";    //OVERLAP
+        QRCodeFRAME.style.borderTop = "none";    //OVERLAP        
+
+        var MeTXTFRAME = 0;
+        // if(bitz.TXT){
+        MeTXTFRAME = document.createElement('article');
+        MeTXTFRAME.style.backgroundColor = 'black';
+        // TXTFRAME.style.backgroundColor = getRandoColor();
+        MeTXTFRAME.style.boxShadow = "0px 0px 20px 1px purple"
+        MeTXTFRAME.style.border = "1px solid steelblue"
+        MeTXTFRAME.style.borderRadius = "13px"
+        MeTXTFRAME.style.padding = "0.888em"
+        MeTXTFRAME.style.margin = "0.88em auto"
+        MeTXTFRAME.style.maxWidth = "42em"
+        MeTXTFRAME.style.cursor = "pointer"
+        MeTXTFRAME.style.overflow = "hidden";    
+        MeTXTFRAME.style.marginBottom = "1em";   
+        MeTXTFRAME.style.color = 'steelblue';
+        // TXTFRAME.style.marginTop = "1em";    //OVERLAP
+        MeTXTFRAME.style.borderTop = "none";    //OVERLAP        
+        // }
+        //  else { //no btz.TXT
+            // pageFrame.style.marginTop="6.666em";  //no txt padding
+            // pageFrame.style.marginBottom="6.666em"; //no txt padding
+        // }
+
+        var txtCard2 = 0;
+        // if(bitz.TXT){
+            txtCard2 = document.createElement('footer'); //IMG  //OTHER IMAGE TYPES HERE
+            txtCard2.innerText = "ABOUT ME"; //large 600 size
+            txtCard2.style.width = "100%";
+            // txtCard2.style.height = "4em";
+            txtCard2.style.maxWidth = "32em"
+            txtCard2.style.padding = "2em"
+            txtCard2.style.margin = "0 auto"
+            // txtCard2.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
+            txtCard2.style.boxShadow = "inset rgb(30 84 200) 2px 2px 14px 8px"
+            txtCard2.style.borderRadius = "18px"
+            // txtCard2.style.marginBottom = "-6em"
+            // txtCard2.style.marginBottom = "-5.666em"
+            // txtCard2.style.marginTop = "1em"
+            txtCard2.addEventListener("click", ()=> {
+                // txtCard2.showDetails = (txtCard2.showDetails) ? 0 : 1;
+                // if(txtCard2.showDetails){
+                //     txtCard2.style.marginBottom = "0em"
+                // }else{
+                //     txtCard2.style.marginBottom = "-5.666em"
+                // }
+            })
+        // } 
+            
+        let pageTitle = document.createElement('h1'); //IMG  //OTHER IMAGE TYPES HERE
+        pageTitle.innerText = "ABOUT ME"; //large 600 size
+        pageTitle.style.width = "100%";
+        // pageTi.style.height = "4em";
+        pageTitle.style.maxWidth = "32em"
+        pageTitle.style.padding = "2em"
+        pageTitle.style.margin = "0 auto"
+
+    let QRCodeIMG=`<a href="https://linktr.ee/spazefalcon" target="_blank">
+    <img src="./images/qrcode_linktree.png"  style="border-radius:10%;width:80%;max-width:12em;"/>
+    </a>`;
+    let AboutMeTXT=`<p>Hello! Welcome to AI_BUILD_ZONE!</p>
+    <p>Explore the intersection of art and technology.</p>
+    <p>Join me on this creative journey!</p>
+    <h2>My Work</h2>
+    <h3>Projects</h3>
+    <ul>
+        <li>Project 1</li>
+        <li>Project 2</li>
+        <li>Project 3</li>
+    </ul>
+    `;
+    // displayFrame.innerHTML = QRCodeIMG;
+
+
+        // if (KRYPTOBOOKFrame1) { KRYPTOBOOKFrame1.insertAdjacentElement('beforeend', pageSpacer); }
+        // if (pageFrame && pageCard) { pageFrame.insertAdjacentElement('beforeend', pageCard); }
+        // if(imgCard1 && IMGBIT){IMGBIT.insertAdjacentElement('afterbegin', imgCard1);}
+        KRYPTOBOOKFrame1.innerHTML = ''; //blank out
+        viz.create_Dynamic_TTL('ABOUT ME',KRYPTOBOOKFrame1);
+        if(txtCard2 && TXTFRAME){TXTFRAME.insertAdjacentElement('afterbegin', txtCard2);}
+        if(QRCodeFRAME){QRCodeFRAME.innerHTML = QRCodeIMG;}
+        if(MeTXTFRAME){MeTXTFRAME.innerHTML = AboutMeTXT;}
+        // if (pageFrame && IMGBIT) { pageFrame.insertAdjacentElement('beforeend', IMGBIT); }
+        if (pageFrame) { pageFrame.insertAdjacentElement('beforeend', QRCodeFRAME); }
+        if (pageFrame) { pageFrame.insertAdjacentElement('beforeend', MeTXTFRAME); }
+        if (pageFrame && TXTFRAME) { pageFrame.insertAdjacentElement('beforeend', TXTFRAME); }
+        if (KRYPTOBOOKFrame1) { KRYPTOBOOKFrame1.insertAdjacentElement('beforeend', pageFrame); }
+        // if (pageFrame) { pageFrame.insertAdjacentElement('beforebegin', pageTitle); }
+
+    } //end bio page
     function getCOZMOTOONZ(CID){
         let METANET_BOOKZ = { //METANET_CID_to_BOOKZ_lookup - mechanism
             's1.e1':SPAZEBOOK_KRYPTOBITZ1, 
