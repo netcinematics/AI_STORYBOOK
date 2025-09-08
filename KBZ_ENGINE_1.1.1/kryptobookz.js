@@ -518,54 +518,55 @@ for signs of life.`},
     {IDX:'1.3',
      IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_3.png",
     //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a3.png",
-     TXT:`"There it is!", Orby thinks.
+     TXT:`Orby follows a signal across the galaxy.
+     
+     "There it is!"
 
 "The lost spaze crash, of Commander Zawd!" 
 
-In an Ice Lake, on MARZAMOON!`},
+"In Crater Lake, on MARZAMOON!?!"`},
     {IDX:'1.4',
      IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_4.png",
     //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a4.png",
      TXT:`Orby peers into the cockpit.
 
-And finds Commander Zawd frozen!
+He sees Commander Zawd is frozen!
 
 Orby scans the spazecraft for life.
 
-And zaps the data across space with a laser.`},
+Then zaps the data across space, in a laser beam.`},
     {IDX:'1.5',
      IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_5.png",
     //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a5.png",
-     TXT:`Orby hears a rumble in the distance.
+     TXT:`There is a rumble in the distance.
 
-A Marzamoon sandstorm grows behind him!
+"A Marzamoon SANDSTORM!"
 
-And a gust of wind blows the SpazeBoard,
+A gust, blows the SPAZEBOARD,
 
-across the crater, into a sand dune, like a dart.`},
-    {IDX:'1.6',
-     IMG:"",
-     TXT:`"I got it!", Orby says.
+across the ICE, and into a sand dune.
 
-     With one hand on the SpazeBoard, 
+Orby lunges for his SPAZEBOARD, "I got it!"
 
-     he sinks in the sand.
+     "You're my only way home!"
 
-And can't get free.
+     But then he sinks in the sand.
+     `},
 
-Orby is about to be buried alive!`},
     {IDX:'1.7a',
      IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_6.png",
     //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a6.png",
      TXT:`From high on the ridge, 
 
-a hero appears in the blowing sand.
+a hero appears, swinging a rope above his head.
 
 "Grab the rope!", he shouts.
 
-The stranger whips a life line, 
+The stranger whips the life line down, 
 
-above his head, and into Orby's hand.
+and into Orby's hand.
+
+Just before Orby is buried alive.
 `},
     {IDX:'1.7',
      IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_7.png",
@@ -576,56 +577,64 @@ And loads him on a sand sled.
 
 Then drags the big heavy bot,
 
-across many dunes, in the blinding sandstorm.
+across many dunes, out of the SANDSTORM.
 `},
     {IDX:'1.8',
      IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_8.png",
     //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a8.png",
      TXT:`Into a canyon they go.
 
-Surrounded by beautiful hoodoos,
+Surrounded by HOODOOS,
 
-carved by wind and sand.
+carved by wind and sand for eons.
 
-Then Orby follows the racoon into a cavern.
-
-Finally, out of the storm.`},
+Then Orby follows the racoon into a PURPLE CAVE.
+`},
     {IDX:'1.9',
      IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_9.png",
     //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a9.png",
      TXT:`"My name is MAXA, and I am stranded."
 
-"Are you a rescue bot?", he asks.
+"Are you a RESCUE BOT?", he asks eagerly.
 
-"Yes", I am a rescue bot from space.", says Orby.
+"Yes", I am a SPACE RESCUE BOT.", Orby confirms.
 
-"Fantastic!" exclaims MAXZA.
+"Fantastic!" says MAXZA.
 
-"I need a rescue!"`},
+"Because I need a RESCUE!"`},
     {IDX:'1.10',
      IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_10.png",
     //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a10.png",
-     TXT:`"Thanks for saving me from the sand dune", replies Orby.
+     TXT:`"Thanks for that life line", replies Orby.
 
-After a pause, he confirms, "Orby will rescue MAXZA."
+After a pause, and a beep, he confirms, 
 
-"Thank you! I've been stranded so long."
+"Orby will rescue MAXZA."
 
-Then Orby realizes, "My SpazeBoard! It's buried!".
+As MAXA grabs a cloth, 
 
+"Thank you! I've been stranded so long!"
+
+Orby realizes, "My SPAZEBOARD! It's buried!".
+
+"No worries.", assures MAXZA.   
+
+As he wipes dust from Orby's eye.
+
+"We'll find it when the storm clears."
+    
 `},
-{IDX:'1.11', TXT:`"No worries.", assures MAXZA.
 
-    As he wipes dust from Orby's eye.
-
-    "We'll get it when the storm clears."`},
-{IDX:'1.11', TXT:`Orby thinks about this strange day.
+{IDX:'1.11', TXT:`That night, in the dark,
     
-    The mystery of MARZAMOON deepens!
+    Orby thinks about this strange day.
     
-    The two become fast friends. 
+    And how to escape MARZAMOON.
     
-    And Orby can only imagine the adventure ahead!"`},
+    The two will soon be fast friends. 
+    
+    As the mystery of this SPAZEWAR deepens!
+    `},
     {TXT:'THE END!'}
 ];
 
