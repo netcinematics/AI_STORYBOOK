@@ -493,7 +493,8 @@ let SPAZEBOOK_KRYPTOBITZ1 = [
 ];
 let SPAZEBOOK_KRYPTOBITZ2 = [
     {IDX:'1.0',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a1.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_1.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a1.png",
      TXT:`ORBY ORBOT | Rescue on MARZAMOON!
 
 AI_STORYBOOK_001 | 2025
@@ -501,7 +502,8 @@ AI_STORYBOOK_001 | 2025
 by NetFalcon`
     },
     {IDX:'1.2',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a2.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_2.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a2.png",
      TXT:`Orby Orbot,
 
 Your MISSION is to:
@@ -514,14 +516,16 @@ and scan his Spazecraft,
 
 for signs of life.`},
     {IDX:'1.3',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a3.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_3.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a3.png",
      TXT:`"There it is!", Orby thinks.
 
 "The lost spaze crash, of Commander Zawd!" 
 
 In an Ice Lake, on MARZAMOON!`},
     {IDX:'1.4',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a4.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_4.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a4.png",
      TXT:`Orby peers into the cockpit.
 
 And finds Commander Zawd frozen!
@@ -530,7 +534,8 @@ Orby scans the spazecraft for life.
 
 And zaps the data across space with a laser.`},
     {IDX:'1.5',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a5.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_5.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a5.png",
      TXT:`Orby hears a rumble in the distance.
 
 A Marzamoon sandstorm grows behind him!
@@ -550,7 +555,8 @@ And can't get free.
 
 Orby is about to be buried alive!`},
     {IDX:'1.7a',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a6.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_6.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a6.png",
      TXT:`From high on the ridge, 
 
 a hero appears in the blowing sand.
@@ -562,7 +568,8 @@ The stranger whips a life line,
 above his head, and into Orby's hand.
 `},
     {IDX:'1.7',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a7.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_7.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a7.png",
      TXT:`The mysterious hero, pulls Orby up the cliff.
 
 And loads him on a sand sled.
@@ -572,7 +579,8 @@ Then drags the big heavy bot,
 across many dunes, in the blinding sandstorm.
 `},
     {IDX:'1.8',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a8.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_8.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a8.png",
      TXT:`Into a canyon they go.
 
 Surrounded by beautiful hoodoos,
@@ -583,7 +591,8 @@ Then Orby follows the racoon into a cavern.
 
 Finally, out of the storm.`},
     {IDX:'1.9',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a9.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_9.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a9.png",
      TXT:`"My name is MAXA, and I am stranded."
 
 "Are you a rescue bot?", he asks.
@@ -594,7 +603,8 @@ Finally, out of the storm.`},
 
 "I need a rescue!"`},
     {IDX:'1.10',
-     IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a10.png",
+     IMG:"./copyrightNetCinematics/MARZAMOON1/orby3_storybook_10.png",
+    //  IMG:"./copyrightNetCinematics/KRYPTOBOOKZ/2025_SPAZECRASH_002/orby1_storybook_a10.png",
      TXT:`"Thanks for saving me from the sand dune", replies Orby.
 
 After a pause, he confirms, "Orby will rescue MAXZA."
