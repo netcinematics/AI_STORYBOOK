@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXI Language Project Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Brilliant Blues -->
+    <!-- Narrative & Structure Plan: The infographic tells the story of the AXI project, progressing from foundational concepts to advanced implementation. It is structured into four distinct, scrollable sections: 1. **Project Vision:** Introduces the core concepts of AXI, aSPARKa, and Exactification. 2. **Phase 1 - The Foundation:** Details the initial in-context learning approach with a "Condensed Memory File." 3. **Phase 2 - Automation & Scaling:** Visualizes the move to automated data loading and corpus growth. 4. **Phase 3 - Advanced Architecture:** Explains the transition to a more efficient RAG system. This linear, phased approach provides a clear, step-by-step roadmap for the user, making a complex project digestible and actionable. -->
+    <!-- Visualization Choices:
+        - Data Point: Core AXI Concepts. Goal: Inform. Visualization: Styled HTML cards with large text. Justification: This clearly and immediately presents the foundational terminology without visual clutter. Method: HTML/Tailwind.
+        - Data Point: Condensed Memory File Structure. Goal: Organize. Visualization: A structured list. Justification: A list is the most effective way to show the different types of data formats required for the memory file. Method: HTML/Tailwind.
+        - Data Point: Language Corpus Growth. Goal: Change. Visualization: Area Chart. Justification: An area chart effectively demonstrates the cumulative growth of the language's vocabulary and rules over time. Library: Chart.js (Canvas).
+        - Data Point: Context Window vs. RAG Efficiency. Goal: Compare. Visualization: Bar Chart. Justification: A bar chart provides a stark, easy-to-understand visual comparison of the token efficiency between the two methods, highlighting the benefit of RAG. Library: Chart.js (Canvas).
+        - Data Point: Technology Stack. Goal: Organize. Visualization: HTML/CSS diagram with Unicode characters. Justification: A simple diagram effectively illustrates the relationship between the key technologies in the stack. Method: HTML/Tailwind.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* dark gray */
+            color: #E5E7EB;
+        }
+        .bg-white {
+            background-color: #1F2937 !important; /* darker gray for cards */
+        }
+        .text-gray-800 {
+            color: #E5E7EB !important; /* light gray for main text */
+        }
+        .text-gray-600 {
+            color: #9CA3AF !important; /* lighter gray for secondary text */
+        }
+        .bg-gray-50 {
+            background-color: #374151 !important; /* medium gray for nested cards */
+        }
+        .border-gray-200 {
+            border-color: #4B5563 !important; /* border color */
+        }
+        .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5) !important;
+        }
+        
+        /* Code blocks */
+        code {
+            background-color: #111827 !important;
+            color: #E5E7EB !important;
+        }
+        
+        /* Chart backgrounds */
+        .chart-container {
+            background-color: #1F2937;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        /* Technology stack colors */
+        .bg-blue-100 {
+            background-color: #1E40AF !important;
+            color: #E5E7EB !important;
+        }
+        .bg-green-100 {
+            background-color: #065F46 !important;
+            color: #E5E7EB !important;
+        }
+        .bg-purple-100 {
+            background-color: #5B21B6 !important;
+            color: #E5E7EB !important;
+        }
+        
+        /* Chart colors */
+        #corpusGrowthChart, #ragComparisonChart {
+            background-color: #1F2937;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="max-w-5xl mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003f5c]">The AXI Language Project</h1>
+            <p class="mt-4 text-lg text-gray-600">A Visual Roadmap for Building a Symbiotic Human-AI Language Model</p>
+        </header>
+
+        <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#7a5195] mb-4">Project Vision: Core Concepts</h2>
+            <p class="text-gray-600 mb-6">The project's foundation is a new symbiotic language designed to enhance human and AI intelligence simultaneously. This requires the AI to understand three core principles derived from your research.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-[#003f5c]">AXI</h3>
+                    <p class="mt-2 text-gray-600">The new hybrid language that serves as the medium for symbiotic intelligence growth.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-[#003f5c]">aSPARKa</h3>
+                    <p class="mt-2 text-gray-600">The framework for the "Symbiotic Partnership for Augmenting Reality and Knowledge Acquisition."</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-[#003f5c]">Exactification</h3>
+                    <p class="mt-2 text-gray-600">The process of refining ambiguous language into pristine, clear concepts for the AI.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#bc5090] mb-4">Phase 1: The Foundation - In-Context Learning</h2>
+            <p class="text-gray-600 mb-6">The initial phase involves teaching the AI using a "Condensed Memory File" loaded directly into the model's context window. This file acts as a comprehensive primer on AXI's vocabulary and rules. The data must be structured for optimal learning.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Memory File Structure:</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-xl text-[#ff764a] font-bold mr-3">1.</span>
+                            <div>
+                                <h4 class="font-semibold">Simple Definitions</h4>
+                                <p class="text-gray-600 text-sm">Key-value pairs for core vocabulary.<br><code class="text-xs bg-gray-100 p-1 rounded">aSPARKa: [definition] ...</code></p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-xl text-[#ff764a] font-bold mr-3">2.</span>
+                            <div>
+                                <h4 class="font-semibold">Transformation Rules</h4>
+                                <p class="text-gray-600 text-sm">Examples of "Exactification" in practice.<br><code class="text-xs bg-gray-100 p-1 rounded">RULE: [Ambiguous] -> [AXI]</code></p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-xl text-[#ff764a] font-bold mr-3">3.</span>
+                            <div>
+                                <h4 class="font-semibold">Q&A Pairs</h4>
+                                <p class="text-gray-600 text-sm">Primes the model for conversational recall.<br><code class="text-xs bg-gray-100 p-1 rounded">Q: What is...? A: It is...</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center bg-[#003f5c] text-white p-8 rounded-lg">
+                    <p class="text-lg">Initial Target</p>
+                    <p class="text-6xl font-bold my-2">100+</p>
+                    <p class="text-lg">Core Terms & Rules</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#ef5675] mb-4">Phase 2: Automation & Scaling</h2>
+            <p class="text-gray-600 mb-6">As the language grows, manual context loading becomes inefficient. The next step is to automate this process using the Google Docs API and track the expansion of the language corpus over time. This creates a continuous learning loop where the AI always has the most current version of the language.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                 <div>
+                    <h3 class="text-lg font-semibold mb-3 text-center">Automated Workflow</h3>
+                     <div class="flex items-center justify-center space-x-2 text-sm md:text-base font-semibold text-center">
+                        <div class="p-4 bg-blue-100 text-blue-800 rounded-lg">Google Doc</div>
+                        <div class="text-2xl text-gray-400 font-mono">&#8594;</div>
+                        <div class="p-4 bg-green-100 text-green-800 rounded-lg">Python Script (API)</div>
+                        <div class="text-2xl text-gray-400 font-mono">&#8594;</div>
+                        <div class="p-4 bg-purple-100 text-purple-800 rounded-lg">LLM Context</div>
+                    </div>
+                 </div>
+                <div>
+                     <h3 class="text-lg font-semibold mb-3 text-center">Language Corpus Growth</h3>
+                    <div class="chart-container">
+                        <canvas id="corpusGrowthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#ff764a] mb-4">Phase 3: Advanced Architecture - RAG</h2>
+            <p class="text-gray-600 mb-6">To overcome context window limitations and improve efficiency, the final phase implements Retrieval-Augmented Generation (RAG). Instead of loading the entire memory file, RAG uses a vector database (e.g., FAISS) to find and inject only the most relevant information for a given query, drastically reducing the number of tokens required.</p>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-center">Token Efficiency: Context vs. RAG</h3>
+                    <div class="chart-container">
+                        <canvas id="ragComparisonChart"></canvas>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-lg font-semibold mb-3 text-center">Technology Stack</h3>
+                    <div class="p-6 bg-gray-50 rounded-lg border">
+                         <div class="flex flex-col items-center space-y-4">
+                            <div class="text-center">
+                                <span class="text-2xl">🤖</span>
+                                <p class="font-bold">Transformers.js</p>
+                                <p class="text-sm text-gray-500">Web-based Inference</p>
+                            </div>
+                            <div class="text-xl text-gray-400">⇕</div>
+                             <div class="text-center">
+                                <span class="text-2xl">🧠</span>
+                                <p class="font-bold">Gemma / Custom Model</p>
+                                <p class="text-sm text-gray-500">Core Language Model</p>
+                            </div>
+                            <div class="text-xl text-gray-400">⇕</div>
+                            <div class="text-center">
+                                <span class="text-2xl">🔍</span>
+                                <p class="font-bold">FAISS (Vector Search)</p>
+                                <p class="text-sm text-gray-500">Efficient Retrieval</p>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function wrapLabels(label, maxLength) {
+            if (typeof label !== 'string') return label;
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        }
+        
+        const sharedTooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const corpusGrowthCtx = document.getElementById('corpusGrowthChart').getContext('2d');
+        new Chart(corpusGrowthCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 4', 'Week 8', 'Week 12'],
+                datasets: [{
+                    label: 'Terms & Rules in Corpus',
+                    data: [75, 200, 500, 1200],
+                    backgroundColor: 'rgba(255, 118, 74, 0.2)',
+                    borderColor: '#ff764a',
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                ...sharedTooltipCallback
+            }
+        });
+
+        const ragComparisonCtx = document.getElementById('ragComparisonChart').getContext('2d');
+        new Chart(ragComparisonCtx, {
+            type: 'bar',
+            data: {
+                labels: [['Full Context', 'Window'], ['Retrieval Augmented', 'Generation (RAG)']],
+                datasets: [{
+                    label: 'Tokens Sent to Model',
+                    data: [8192, 512],
+                    backgroundColor: ['#7a5195', '#ffa600'],
+                    borderColor: ['#7a5195', '#ffa600'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        type: 'logarithmic',
+                        ticks: {
+                            callback: function(value, index, values) {
+                                if (value === 10000 || value === 1000 || value === 100 || value === 10 || value === 1) {
+                                    return value.toString();
+                                }
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    ...sharedTooltipCallback.plugins,
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Update chart colors and options
+        const darkThemeChartOptions = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#E5E7EB'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: '#374151'
+                    },
+                    ticks: {
+                        color: '#E5E7EB'
+                    }
+                },
+                y: {
+                    grid: {
+                        color: '#374151'
+                    },
+                    ticks: {
+                        color: '#E5E7EB'
+                    }
+                }
+            }
+        };
+
+        // Apply to both charts after their initialization
+        document.querySelectorAll('canvas').forEach(canvas => {
+            const chart = Chart.getChart(canvas);
+            if (chart) {
+                chart.options = {...chart.options, ...darkThemeChartOptions};
+                chart.update();
+            }
+        });
+    </script>
+
+</body>
+</html>
+
