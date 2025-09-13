@@ -256,76 +256,97 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
     }
 
     function setBIOPAGE(){
-        // debugger;
+
         let pageFrame = document.createElement('section');
         pageFrame.style.backgroundColor = 'black';
         pageFrame.style.borderRadius = "10px";
         pageFrame.style.padding = "0.111em";
-        // pageFrame.style.margin = "0.444em";
-        // pageFrame.style.marginBottom = "8.888%";
         pageFrame.style.boxShadow = "1px 1px 20px 0px blue";
-        // pageFrame.classList.add('storybook-page');
         pageFrame.id = 'BioPageFrame';//.replace('.','-'));
-        // console.log("render: ",bitz.IDX)
 
-        // let pageSpacer = document.createElement('section');
-        // pageSpacer.style.backgroundColor = 'black';
-        // pageSpacer.style.borderRadius = "10px";
-        // // pageSpacer.style.padding = "0.111em";
-        // pageSpacer.style.margin = "0.444em";
-        // pageSpacer.style.height = "4.444em";
-        // pageSpacer.style.fontSize = "8px";
-        // pageSpacer.style.paddingTop = "1.44em"
-        // pageSpacer.style.paddingRight = "1em"
-        // // pageSpacer.style.paddingTop = "auto"
-        // // pageSpacer.style.paddingBottom = "auto"
-        // pageSpacer.style.color = '#071d30';
-        // pageSpacer.style.textAlign = 'right';
-        // if(pgNum && pgTotal) { pageSpacer.innerText = `${pgNum}.${pgTotal}`; }                    //pageNUM
-        // // pageSpacer.style.marginBottom = "8.888%";
-        // pageSpacer.style.boxShadow = "1px 1px 20px 0px blue";
-        // pageSpacer.classList.add('bit-spacer');
-        // pageSpacer.id = "Spacer_" + bitz.IDX;
         
-        // var IMGBIT = document.createElement('article');
-        // IMGBIT.style.backgroundColor = 'black';
-        // // IMGBIT.style.backgroundColor = getRandoColor();
-        // IMGBIT.style.border = "1px solid steelblue"
-        // if(document.body.clientWidth > 888){ IMGBIT.style.borderWidth = "0px";  } //RESPONSIVE
-        // IMGBIT.style.borderRadius = "13px"
-        // IMGBIT.style.padding = "0.888em"
-        // IMGBIT.style.margin = "0.88em auto"
-        // IMGBIT.style.maxWidth = "44em"
-        // IMGBIT.style.cursor = "pointer"
-        // IMGBIT.style.overflow = "hidden";     //CROP
-        // IMGBIT.style.marginBottom = "1em";   //CROP
-        // IMGBIT.classList.add('bluesteel-border-frame');
+        var historyFrame = document.createElement('article');
+        historyFrame.style.backgroundColor = 'black';
+        historyFrame.style.boxShadow = "0px 0px 20px 1px purple"
+        historyFrame.style.border = "1px solid steelblue"
+        historyFrame.style.borderRadius = "13px"
+        historyFrame.style.padding = "0.888em"
+        historyFrame.style.margin = "0.88em auto"
+        historyFrame.style.maxWidth = "42em"
+        historyFrame.style.cursor = "pointer"
+        historyFrame.style.overflow = "hidden";    
+        historyFrame.style.marginBottom = "1em";   
+        historyFrame.style.borderTop = "none";    //OVERLAP
+// debugger;
+        let workbitz = {}, IMGFRAME, IMGBITw = {}, TXTTTL={}, TXTCAPTION={};
+        for(let i=0; i<AI_HISTORY.length;i++){
+            workbitz = AI_HISTORY[i];
+            if(workbitz.TTL){console.log('TTL',workbitz.TTL); //DYNAMIC TEXT
+                TXTTTL = document.createElement('article');
+                TXTTTL.style.backgroundColor = 'black';
+                TXTTTL.style.border = "1px solid steelblue"
+                if(document.body.clientWidth > 888){ TXTTTL.style.borderWidth = "0px";  } //RESPONSIVE
+                TXTTTL.style.borderRadius = "13px"
+                TXTTTL.style.padding = "0.888em"
+                TXTTTL.style.margin = "0.88em"
+                TXTTTL.style.maxWidth = "44em"
+                TXTTTL.style.cursor = "pointer"
+                TXTTTL.style.overflow = "hidden";     //CROP
+                TXTTTL.style.marginBottom = "1em";   //CROP
+                TXTTTL.style.textAlign = "left";
+                TXTTTL.style.marginLeft = "2em";
+                TXTTTL.style.fontWeight = "bold";
+                TXTTTL.classList.add('bluesteel-border-frame');
+                TXTTTL.innerHTML = `title ${workbitz.TTL}`;
+                if (historyFrame && TXTTTL) { historyFrame.insertAdjacentElement('beforeend', TXTTTL); }
+            }
+            if(workbitz.IMG){console.log('IMG',workbitz.IMG); //DYNAMIC IMAGE
 
-        // var imgCard1 = 0;
-        // if(bitz.IMG){
-        //     imgCard1 = document.createElement('img'); //IMG  //OTHER IMAGE TYPES HERE
-        //     imgCard1.src = bitz.IMG; //large 600 size
-        //     imgCard1.style.width = "100%"
-        //     imgCard1.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
-        //     imgCard1.style.borderRadius = "18px"
-        //     // imgCard1.style.marginBottom = "-6.666em"     //CROP
-        //     // imgCard1.style.maxWidth = "444px";          //RESPONSIVE
-        //     imgCard1.style.width = "100%";//"136%";              //WIDTH
-        //     imgCard1.addEventListener("click", ()=> {
-        //         // imgCard1.showDetails = (imgCard1.showDetails) ? 0 : 1;
-        //         // if(imgCard1.showDetails){
-        //         //     imgCard1.style.marginBottom = "2.222em"
-        //         // }else{
-        //         //     imgCard1.style.marginBottom = "-6.666em"
-        //         // }
-        //     })
-        // } 
+                IMGFRAME = document.createElement('article');
+                IMGFRAME.style.backgroundColor = 'black';
+                IMGFRAME.style.border = "1px solid steelblue"
+                if(document.body.clientWidth > 888){ IMGFRAME.style.borderWidth = "0px";  } //RESPONSIVE
+                IMGFRAME.style.borderRadius = "13px"
+                IMGFRAME.style.padding = "0.888em"
+                IMGFRAME.style.margin = "0.88em auto"
+                IMGFRAME.style.maxWidth = "44em"
+                IMGFRAME.style.cursor = "pointer"
+                IMGFRAME.style.overflow = "hidden";     //CROP
+                IMGFRAME.style.marginBottom = "1em";   //CROP
+                IMGFRAME.classList.add('bluesteel-border-frame');
 
-        var TXTFRAME = 0;
-        // if(bitz.TXT){
-        TXTFRAME = document.createElement('article');
+                IMGBITw = document.createElement('img'); //IMG  //OTHER IMAGE TYPES HERE
+                IMGBITw.src = workbitz.IMG; //large 600 size
+                IMGBITw.style.width = "100%"
+                IMGBITw.style.borderRadius = "18px"
+                // IMGBITw.style.marginBottom = "-6.666em"     //CROP
+                IMGBITw.style.maxWidth = "444px";          //RESPONSIVE
+                IMGBITw.style.width = "100%"; //"136%";              //WIDTH
+                IMGFRAME.insertAdjacentElement('beforeend', IMGBITw);
+                if (historyFrame && IMGFRAME) { historyFrame.insertAdjacentElement('beforeend', IMGFRAME); }
+            }
+            if(workbitz.TXT){console.log('TXT',workbitz.TXT); //DYNAMIC TEXT
+                TXTCAPTION = document.createElement('article');
+                TXTCAPTION.style.backgroundColor = 'black';
+                TXTCAPTION.style.border = "1px solid steelblue"
+                if(document.body.clientWidth > 888){ TXTCAPTION.style.borderWidth = "0px";  } //RESPONSIVE
+                TXTCAPTION.style.borderRadius = "13px"
+                TXTCAPTION.style.padding = "0.888em"
+                TXTCAPTION.style.margin = "0.88em auto"
+                TXTCAPTION.style.maxWidth = "44em"
+                TXTCAPTION.style.cursor = "pointer"
+                TXTCAPTION.style.overflow = "hidden";     //CROP
+                TXTCAPTION.style.marginBottom = "1em";   //CROP
+                TXTCAPTION.style.fontFamily = "monospace";
+                TXTCAPTION.classList.add('bluesteel-border-frame');
+                TXTCAPTION.innerHTML = ` description ${workbitz.TXT}`;
+                if (historyFrame && TXTCAPTION) { historyFrame.insertAdjacentElement('beforeend', TXTCAPTION); }
+            }             
+        }
+
+
+        var TXTFRAME = document.createElement('article');
         TXTFRAME.style.backgroundColor = 'black';
-        // TXTFRAME.style.backgroundColor = getRandoColor();
         TXTFRAME.style.boxShadow = "0px 0px 20px 1px purple"
         TXTFRAME.style.border = "1px solid steelblue"
         TXTFRAME.style.borderRadius = "13px"
@@ -335,14 +356,35 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
         TXTFRAME.style.cursor = "pointer"
         TXTFRAME.style.overflow = "hidden";    
         TXTFRAME.style.marginBottom = "1em";   
-        // TXTFRAME.style.marginTop = "1em";    //OVERLAP
         TXTFRAME.style.borderTop = "none";    //OVERLAP
+        var TXTFRAME2 = document.createElement('article');
+        TXTFRAME2.style.backgroundColor = 'black';
+        TXTFRAME2.style.boxShadow = "0px 0px 20px 1px purple"
+        TXTFRAME2.style.border = "1px solid steelblue"
+        TXTFRAME2.style.borderRadius = "13px"
+        TXTFRAME2.style.padding = "0.888em"
+        TXTFRAME2.style.margin = "0.88em auto"
+        TXTFRAME2.style.maxWidth = "42em"
+        TXTFRAME2.style.cursor = "pointer"
+        TXTFRAME2.style.overflow = "hidden";    
+        TXTFRAME2.style.marginBottom = "1em";   
+        TXTFRAME2.style.borderTop = "none";    //OVERLAP
+        var TXTFRAME3 = document.createElement('article');
+        TXTFRAME3.style.backgroundColor = 'black';
+        TXTFRAME3.style.boxShadow = "0px 0px 20px 1px purple"
+        TXTFRAME3.style.border = "1px solid steelblue"
+        TXTFRAME3.style.borderRadius = "13px"
+        TXTFRAME3.style.padding = "0.888em"
+        TXTFRAME3.style.margin = "0.88em auto"
+        TXTFRAME3.style.maxWidth = "42em"
+        TXTFRAME3.style.cursor = "pointer"
+        TXTFRAME3.style.overflow = "hidden";    
+        TXTFRAME3.style.marginBottom = "1em";   
+        TXTFRAME3.style.borderTop = "none";    //OVERLAP        
 
         var QRCodeFRAME = 0;
-        // if(bitz.TXT){
         QRCodeFRAME = document.createElement('article');
         QRCodeFRAME.style.backgroundColor = 'black';
-        // TXTFRAME.style.backgroundColor = getRandoColor();
         QRCodeFRAME.style.boxShadow = "0px 0px 20px 1px purple"
         QRCodeFRAME.style.border = "1px solid steelblue"
         QRCodeFRAME.style.borderRadius = "13px"
@@ -352,14 +394,11 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
         QRCodeFRAME.style.cursor = "pointer"
         QRCodeFRAME.style.overflow = "hidden";    
         QRCodeFRAME.style.marginBottom = "1em";   
-        // TXTFRAME.style.marginTop = "1em";    //OVERLAP
         QRCodeFRAME.style.borderTop = "none";    //OVERLAP        
 
         var MeTXTFRAME = 0;
-        // if(bitz.TXT){
         MeTXTFRAME = document.createElement('article');
         MeTXTFRAME.style.backgroundColor = 'black';
-        // TXTFRAME.style.backgroundColor = getRandoColor();
         MeTXTFRAME.style.boxShadow = "0px 0px 20px 1px purple"
         MeTXTFRAME.style.border = "1px solid steelblue"
         MeTXTFRAME.style.borderRadius = "13px"
@@ -370,78 +409,77 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
         MeTXTFRAME.style.overflow = "hidden";    
         MeTXTFRAME.style.marginBottom = "1em";   
         MeTXTFRAME.style.color = 'steelblue';
-        // TXTFRAME.style.marginTop = "1em";    //OVERLAP
         MeTXTFRAME.style.borderTop = "none";    //OVERLAP        
-        // }
-        //  else { //no btz.TXT
-            // pageFrame.style.marginTop="6.666em";  //no txt padding
-            // pageFrame.style.marginBottom="6.666em"; //no txt padding
-        // }
 
+        var txtCard1 = 0;
+            txtCard1 = document.createElement('footer'); //IMG  //OTHER IMAGE TYPES HERE
+            txtCard1.innerText = "AI OVERVIEW"; //large 600 size
+            txtCard1.style.width = "100%";
+            txtCard1.style.maxWidth = "32em"
+            txtCard1.style.padding = "2em"
+            txtCard1.style.margin = "0 auto"
+            txtCard1.style.fontWeight = "bold";
+            txtCard1.style.boxShadow = "inset rgb(30 84 200) 2px 2px 14px 8px"
+            txtCard1.style.borderRadius = "18px"
+            txtCard1.addEventListener("click", ()=> {
+            })
+
+            
         var txtCard2 = 0;
-        // if(bitz.TXT){
             txtCard2 = document.createElement('footer'); //IMG  //OTHER IMAGE TYPES HERE
-            txtCard2.innerText = "ABOUT ME"; //large 600 size
+            txtCard2.innerText = "AI EXAMPLES"; //large 600 size
             txtCard2.style.width = "100%";
-            // txtCard2.style.height = "4em";
             txtCard2.style.maxWidth = "32em"
             txtCard2.style.padding = "2em"
             txtCard2.style.margin = "0 auto"
-            // txtCard2.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
+            txtCard2.style.fontWeight = "bold";
             txtCard2.style.boxShadow = "inset rgb(30 84 200) 2px 2px 14px 8px"
             txtCard2.style.borderRadius = "18px"
-            // txtCard2.style.marginBottom = "-6em"
-            // txtCard2.style.marginBottom = "-5.666em"
-            // txtCard2.style.marginTop = "1em"
-            txtCard2.addEventListener("click", ()=> {
-                // txtCard2.showDetails = (txtCard2.showDetails) ? 0 : 1;
-                // if(txtCard2.showDetails){
-                //     txtCard2.style.marginBottom = "0em"
-                // }else{
-                //     txtCard2.style.marginBottom = "-5.666em"
-                // }
-            })
-        // } 
             
-        let pageTitle = document.createElement('h1'); //IMG  //OTHER IMAGE TYPES HERE
-        pageTitle.innerText = "ABOUT ME"; //large 600 size
-        pageTitle.style.width = "100%";
-        // pageTi.style.height = "4em";
-        pageTitle.style.maxWidth = "32em"
-        pageTitle.style.padding = "2em"
-        pageTitle.style.margin = "0 auto"
-
+        var txtCard3 = 0;
+            txtCard3 = document.createElement('footer'); //IMG  //OTHER IMAGE TYPES HERE
+            txtCard3.innerText = "LINKTREE"; //large 600 size
+            txtCard3.style.width = "100%";
+            txtCard3.style.maxWidth = "32em"
+            txtCard3.style.padding = "2em"
+            txtCard3.style.margin = "0 auto"
+            txtCard3.style.fontWeight = "bold";
+            txtCard3.style.boxShadow = "inset rgb(30 84 200) 2px 2px 14px 8px"
+            txtCard3.style.borderRadius = "18px"
+            
+            
     let QRCodeIMG=`<a href="https://linktr.ee/spazefalcon" target="_blank">
     <img src="./images/qrcode_linktree.png"  style="border-radius:10%;width:80%;max-width:12em;"/>
     </a>`;
-    let AboutMeTXT=`<p>Hello! Welcome to AI_BUILD_ZONE!</p>
-    <p>Explore the intersection of art and technology.</p>
-    <p>Join me on this creative journey!</p>
-    <h2>My Work</h2>
-    <h3>Projects</h3>
-    <ul>
-        <li>Project 1</li>
-        <li>Project 2</li>
-        <li>Project 3</li>
-    </ul>
+    let AboutMeTXT=`
+        <aside style="text-align:left;margin:1em;line-height:2em;color:steelblue;">
+            <div><b>AI BANKBOOKS</b></div>
+            <div style="font-size:0.666em; margin-left:20px;"><i>Data VIS | CODE Gen | CoPilot | FIN TECH</i></div>
+            <div><b>AI_STORYBOOK</b></div>
+            <div style="font-size:0.666em; margin-left:20px;"><i>Image Gen | Google Storybook</i></div>
+            <div><b>AI_CREATIVE_DEV</b></div>
+            <div style="font-size:0.666em; margin-left:20px;"><i>Audio/Video Gen | YouTube</i></div>
+            <div><b>NEURAL_NET</b></div>
+            <div style="font-size:0.666em; margin-left:20px;"><i>Data VIS | Gemini | Google Gold Developer </i></div>
+            <div><b>AXI_AI</b></div>
+            <div style="font-size:0.666em; margin-left:20px;"><i>AI ARCHITECT | Hugging Face LLM | Google Research | CoLab</i></div>
+        </aside>
+    </section>
     `;
-    // displayFrame.innerHTML = QRCodeIMG;
 
-
-        // if (KRYPTOBOOKFrame1) { KRYPTOBOOKFrame1.insertAdjacentElement('beforeend', pageSpacer); }
-        // if (pageFrame && pageCard) { pageFrame.insertAdjacentElement('beforeend', pageCard); }
-        // if(imgCard1 && IMGBIT){IMGBIT.insertAdjacentElement('afterbegin', imgCard1);}
         KRYPTOBOOKFrame1.innerHTML = ''; //blank out
-        viz.create_Dynamic_TTL('ABOUT ME',KRYPTOBOOKFrame1);
-        if(txtCard2 && TXTFRAME){TXTFRAME.insertAdjacentElement('afterbegin', txtCard2);}
+        if(txtCard1 && TXTFRAME){TXTFRAME.insertAdjacentElement('afterbegin', txtCard1);}
+        if(txtCard2 && TXTFRAME2){TXTFRAME2.insertAdjacentElement('afterbegin', txtCard2);}
+        if(txtCard3 && TXTFRAME3){TXTFRAME3.insertAdjacentElement('afterbegin', txtCard3);}
         if(QRCodeFRAME){QRCodeFRAME.innerHTML = QRCodeIMG;}
         if(MeTXTFRAME){MeTXTFRAME.innerHTML = AboutMeTXT;}
-        // if (pageFrame && IMGBIT) { pageFrame.insertAdjacentElement('beforeend', IMGBIT); }
-        if (pageFrame) { pageFrame.insertAdjacentElement('beforeend', QRCodeFRAME); }
-        if (pageFrame) { pageFrame.insertAdjacentElement('beforeend', MeTXTFRAME); }
         if (pageFrame && TXTFRAME) { pageFrame.insertAdjacentElement('beforeend', TXTFRAME); }
+        if (pageFrame) { pageFrame.insertAdjacentElement('beforeend', MeTXTFRAME); }
+        if (pageFrame && TXTFRAME2) { pageFrame.insertAdjacentElement('beforeend', TXTFRAME2); }
+        if (pageFrame ) { pageFrame.insertAdjacentElement('beforeend', historyFrame); }
+        if (pageFrame && TXTFRAME3) { pageFrame.insertAdjacentElement('beforeend', TXTFRAME3); }
+        if (pageFrame) { pageFrame.insertAdjacentElement('beforeend', QRCodeFRAME); }
         if (KRYPTOBOOKFrame1) { KRYPTOBOOKFrame1.insertAdjacentElement('beforeend', pageFrame); }
-        // if (pageFrame) { pageFrame.insertAdjacentElement('beforebegin', pageTitle); }
 
     } //end bio page
     function getCOZMOTOONZ(CID){
@@ -636,6 +674,37 @@ As he wipes dust from Orby's eye.
     As the mystery of this SPAZEWAR deepens!
     `},
     {TXT:'THE END!'}
+];
+
+let AI_HISTORY = [
+    {TTL:"aaa",TXT:"0",
+     IMG:"./assets/img/1.png"},
+    {IMG:"./assets/img/2.png",
+     TXT:"1"},
+    {IMG:"./assets/img/3.png",
+     TXT:"2"},
+    {TTL:"bbb",
+     IMG:"./assets/img/4.png",
+     TXT:"4"},
+    {IMG:"./assets/img/5.png",
+     TXT:"5"},
+    {IMG:"./assets/img/6.png",
+     TXT:"6"},
+    {IMG:"./assets/img/7.png"},
+    {IMG:"./assets/img/8.png",
+     TXT:"7"},
+    {TTL:"ccc",
+     IMG:"./assets/img/9.png",
+     TXT:"8"},
+    {IMG:"./assets/img/10.png",
+     TXT:"9"},
+    {IMG:"./assets/img/11.png"},
+    {IMG:"./assets/img/12.png"},
+    {IMG:"./assets/img/13.png"},
+    {IMG:"./assets/img/14.png"},
+    {IMG:"./assets/img/15.png"},
+    {IMG:"./assets/img/16.png"},
+    {IMG:"./assets/img/17.png"},
 ];
 
 function nextPage(){
