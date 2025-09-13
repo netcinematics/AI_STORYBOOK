@@ -836,7 +836,7 @@ function create_META_VIEW(ViewData){ //BUILD METACARD DISPLAY - for MANY types o
         metaCard.style.borderRadius = "13.333px"
         metaCard.style.padding = "0.888em"
         metaCard.style.margin = "0.88em auto"
-        metaCard.style.maxWidth = "36em"
+        metaCard.style.maxWidth = "80%"
         //CARD IMG
         let metaCardIMG = document.createElement('img'); //IMG
         metaCardIMG.style.padding = "0.888em"

@@ -272,13 +272,13 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
         historyFrame.style.borderRadius = "13px"
         historyFrame.style.padding = "0.888em"
         historyFrame.style.margin = "0.88em auto"
-        historyFrame.style.maxWidth = "42em"
+        historyFrame.style.maxWidth = "90%"
         historyFrame.style.cursor = "pointer"
         historyFrame.style.overflow = "hidden";    
         historyFrame.style.marginBottom = "1em";   
         historyFrame.style.borderTop = "none";    //OVERLAP
 // debugger;
-        let workbitz = {}, IMGFRAME, IMGBITw = {}, TXTTTL={}, TXTCAPTION={};
+        let workbitz = {}, IMGFRAME, IMGBITw = {}, TXTTTL={}, TXTCAPTION={}, TXTSUB={};
         for(let i=0; i<AI_HISTORY.length;i++){
             workbitz = AI_HISTORY[i];
             if(workbitz.TTL){console.log('TTL',workbitz.TTL); //DYNAMIC TEXT
@@ -288,16 +288,16 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
                 if(document.body.clientWidth > 888){ TXTTTL.style.borderWidth = "0px";  } //RESPONSIVE
                 TXTTTL.style.borderRadius = "13px"
                 TXTTTL.style.padding = "0.888em"
-                TXTTTL.style.margin = "0.88em"
+                TXTTTL.style.margin = "2em 0 2em 0"
                 TXTTTL.style.maxWidth = "44em"
                 TXTTTL.style.cursor = "pointer"
                 TXTTTL.style.overflow = "hidden";     //CROP
-                TXTTTL.style.marginBottom = "1em";   //CROP
+                // TXTTTL.style.marginBottom = "1em";   //CROP
                 TXTTTL.style.textAlign = "left";
-                TXTTTL.style.marginLeft = "2em";
+                // TXTTTL.style.marginLeft = "2em";
                 TXTTTL.style.fontWeight = "bold";
                 TXTTTL.classList.add('bluesteel-border-frame');
-                TXTTTL.innerHTML = `title ${workbitz.TTL}`;
+                TXTTTL.innerHTML = `${workbitz.TTL}`;
                 if (historyFrame && TXTTTL) { historyFrame.insertAdjacentElement('beforeend', TXTTTL); }
             }
             if(workbitz.IMG){console.log('IMG',workbitz.IMG); //DYNAMIC IMAGE
@@ -339,44 +339,61 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
                 TXTCAPTION.style.marginBottom = "1em";   //CROP
                 TXTCAPTION.style.fontFamily = "monospace";
                 TXTCAPTION.classList.add('bluesteel-border-frame');
-                TXTCAPTION.innerHTML = ` description ${workbitz.TXT}`;
+                TXTCAPTION.innerHTML = `${workbitz.SUB}`;
                 if (historyFrame && TXTCAPTION) { historyFrame.insertAdjacentElement('beforeend', TXTCAPTION); }
             }             
+            // if(workbitz.SUB){console.log('SUB',workbitz.SUB); //DYNAMIC TEXT
+            //     TXTSUB = document.createElement('article');
+            //     TXTSUB.style.backgroundColor = 'black';
+            //     TXTSUB.style.border = "1px solid steelblue"
+            //     if(document.body.clientWidth > 888){ TXTSUB.style.borderWidth = "0px";  } //RESPONSIVE
+            //     TXTCAPTION.style.borderRadius = "13px"
+            //     TXTCAPTION.style.padding = "0.888em"
+            //     TXTSUB.style.margin = "0.88em auto"
+            //     TXTSUB.style.maxWidth = "44em"
+            //     TXTSUB.style.cursor = "pointer"
+            //     TXTSUB.style.overflow = "hidden";     //CROP
+            //     TXTSUB.style.marginBottom = "1em";   //CROP
+            //     TXTSUB.style.fontFamily = "monospace";
+            //     TXTSUB.classList.add('bluesteel-border-frame');
+            //     TXTSUB.innerHTML = ` description ${workbitz.SUB}`;
+            //     if (historyFrame && TXTSUB) { historyFrame.insertAdjacentElement('beforeend', TXTSUB); }
+            // }             
         }
 
 
         var TXTFRAME = document.createElement('article');
         TXTFRAME.style.backgroundColor = 'black';
-        TXTFRAME.style.boxShadow = "0px 0px 20px 1px purple"
+        TXTFRAME.style.boxShadow = "0px 0px 20px 1px cornflowerblue"
         TXTFRAME.style.border = "1px solid steelblue"
         TXTFRAME.style.borderRadius = "13px"
         TXTFRAME.style.padding = "0.888em"
         TXTFRAME.style.margin = "0.88em auto"
-        TXTFRAME.style.maxWidth = "42em"
+        TXTFRAME.style.maxWidth = "92%"
         TXTFRAME.style.cursor = "pointer"
         TXTFRAME.style.overflow = "hidden";    
         TXTFRAME.style.marginBottom = "1em";   
         TXTFRAME.style.borderTop = "none";    //OVERLAP
         var TXTFRAME2 = document.createElement('article');
         TXTFRAME2.style.backgroundColor = 'black';
-        TXTFRAME2.style.boxShadow = "0px 0px 20px 1px purple"
+        TXTFRAME2.style.boxShadow = "0px 0px 20px 1px cornflowerblue"
         TXTFRAME2.style.border = "1px solid steelblue"
         TXTFRAME2.style.borderRadius = "13px"
         TXTFRAME2.style.padding = "0.888em"
         TXTFRAME2.style.margin = "0.88em auto"
-        TXTFRAME2.style.maxWidth = "42em"
+        TXTFRAME2.style.maxWidth = "92%"
         TXTFRAME2.style.cursor = "pointer"
         TXTFRAME2.style.overflow = "hidden";    
         TXTFRAME2.style.marginBottom = "1em";   
         TXTFRAME2.style.borderTop = "none";    //OVERLAP
         var TXTFRAME3 = document.createElement('article');
         TXTFRAME3.style.backgroundColor = 'black';
-        TXTFRAME3.style.boxShadow = "0px 0px 20px 1px purple"
+        TXTFRAME3.style.boxShadow = "0px 0px 20px 1px steelblue"
         TXTFRAME3.style.border = "1px solid steelblue"
         TXTFRAME3.style.borderRadius = "13px"
         TXTFRAME3.style.padding = "0.888em"
         TXTFRAME3.style.margin = "0.88em auto"
-        TXTFRAME3.style.maxWidth = "42em"
+        TXTFRAME3.style.maxWidth = "92%"
         TXTFRAME3.style.cursor = "pointer"
         TXTFRAME3.style.overflow = "hidden";    
         TXTFRAME3.style.marginBottom = "1em";   
@@ -390,7 +407,7 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
         QRCodeFRAME.style.borderRadius = "13px"
         QRCodeFRAME.style.padding = "0.888em"
         QRCodeFRAME.style.margin = "0.88em auto"
-        QRCodeFRAME.style.maxWidth = "42em"
+        QRCodeFRAME.style.maxWidth = "90%"
         QRCodeFRAME.style.cursor = "pointer"
         QRCodeFRAME.style.overflow = "hidden";    
         QRCodeFRAME.style.marginBottom = "1em";   
@@ -404,7 +421,7 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
         MeTXTFRAME.style.borderRadius = "13px"
         MeTXTFRAME.style.padding = "0.888em"
         MeTXTFRAME.style.margin = "0.88em auto"
-        MeTXTFRAME.style.maxWidth = "42em"
+        MeTXTFRAME.style.maxWidth = "90%"
         MeTXTFRAME.style.cursor = "pointer"
         MeTXTFRAME.style.overflow = "hidden";    
         MeTXTFRAME.style.marginBottom = "1em";   
@@ -677,34 +694,34 @@ As he wipes dust from Orby's eye.
 ];
 
 let AI_HISTORY = [
-    {TTL:"aaa",TXT:"0",
-     IMG:"./assets/img/1.png"},
+    {TTL:"Embedding Matrix VIZ",TXT:"0",
+     IMG:"./assets/img/1.png",SUB:"3D interactive data viz of embed matrix, using Tensorflow.js and Three.js"},
     {IMG:"./assets/img/2.png",
-     TXT:"1"},
+     TXT:"1",SUB:"aabcd"},
     {IMG:"./assets/img/3.png",
-     TXT:"2"},
-    {TTL:"bbb",
+     TXT:"2",SUB:"aabcd"},
+    {TTL:"CORPUS VIZ",
      IMG:"./assets/img/4.png",
-     TXT:"4"},
+     TXT:"4",SUB:"aabcd"},
     {IMG:"./assets/img/5.png",
-     TXT:"5"},
+     TXT:"5",SUB:"aabcd"},
     {IMG:"./assets/img/6.png",
-     TXT:"6"},
+     TXT:"6",SUB:"aabcd"},
     {IMG:"./assets/img/7.png"},
     {IMG:"./assets/img/8.png",
-     TXT:"7"},
+     TXT:"7",SUB:"aabcd"},
     {TTL:"ccc",
      IMG:"./assets/img/9.png",
-     TXT:"8"},
+     TXT:"8",SUB:"aabcd"},
     {IMG:"./assets/img/10.png",
-     TXT:"9"},
-    {IMG:"./assets/img/11.png"},
-    {IMG:"./assets/img/12.png"},
-    {IMG:"./assets/img/13.png"},
-    {IMG:"./assets/img/14.png"},
-    {IMG:"./assets/img/15.png"},
-    {IMG:"./assets/img/16.png"},
-    {IMG:"./assets/img/17.png"},
+     TXT:"9",SUB:"aabcd"},
+    {IMG:"./assets/img/11.png",SUB:"aabcd"},
+    {IMG:"./assets/img/12.png",SUB:"aabcd"},
+    {IMG:"./assets/img/13.png",SUB:"aabcd"},
+    {IMG:"./assets/img/14.png",SUB:"aabcd"},
+    {IMG:"./assets/img/15.png",SUB:"aabcd"},
+    {IMG:"./assets/img/16.png",SUB:"aabcd"},
+    {IMG:"./assets/img/17.png",SUB:"aabcd"},
 ];
 
 function nextPage(){
@@ -1003,7 +1020,7 @@ function loadGalleryView(){ //
     let galleryViewMarkup=`
         <header id="pageTitle" style="padding:0.666em;">
             <section style="margin: 0.222em;">
-                <span class="pageTitleTXT" style=" text-shadow: 6px 1px 14px purple;">COZMOBOOKZ</span><span class="tradeMark">&trade;</span>
+                <span class="pageTitleTXT" style=" text-shadow: 6px 1px 14px purple;">AI_BOOKZ</span><span class="tradeMark">&trade;</span>
             </section>
         </header>
     `;
