@@ -7,24 +7,6 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <title>PORTFOLIO</title>  
- 
-    <!-- <p>
-        <h2>TODO:</h2> this page will HOST the first ever: CRYPTOBOOK!<br>
-        QUESTION: what will it do?<br>
-        On LOAD, Query Contract with SERIES_INDEX (SIDX)<BR>
-        Or LOAD, OpenSea API, with EPIC_INDEX (EPID)<br> 
-        MENU<br>
-        SHOW: MARQUEE_PAGE of SERIES.<br>
-        SHOW: SERIES_TITLE.<br>
-        SHOW: EPIC_TITLE. <br>
-        <h3>INTERACTIONS</h3>
-        Each VIEW will have GRID9 LINKS. <br>
-        Everything populated from METANET <br>
-        GET BLOCKCHAIN, is a DATESTAMP <br>
-        In Web3, that DATESTAMP is IDX2IPFS.<br>
-        METANET returns, ALL LINKS and CONTENT. <br>
-        GET IPFS, DISPLAY CONTENT. <br> 
-    </p> -->
 
     <style>
         .fas::after { font-family: Verdana}
@@ -271,6 +253,8 @@
     <section id="itemDISPLAYFRAME1" style="display:none; padding:0.222em; border:1px solid darkslateblue; border-radius:13px; width:98%; margin:0 auto; border-radius:22px; max-width: 66em;"> </section>
 </article>
 <style>
+    #AI_PROJECTS b{color:cornflowerblue; font-size:1.222em; }
+    #AI_PROJECTS {color:steelblue; font-size:1em; }
 /*Here is Mobile Breakpoint Template:
 put all your mobile styles above*/
 
@@ -279,6 +263,8 @@ put all your mobile styles above*/
     .pageTitleTXT{
         font-size: 1.444em;
     }
+        #AI_PROJECTS{flex-direction: column;}
+        #AI_PROJECTS aside{width: 100% !important;}
     #topMenuFrame{ margin-top:3em}
     .menuBtn{height: 2.333em;font-size: 13.333px;}
 }
@@ -289,12 +275,15 @@ put all your mobile styles above*/
     }
     #topMenuFrame{ margin-top:3em}
     .menuBtn{height: 3em;}
+    
 }
 /*tablet styles here*/
 @media only screen and (min-width: 550px) {
     .pageTitleTXT{
         font-size: 1.444em;
     }
+    #AI_PROJECTS{flex-direction: column;}
+    #AI_PROJECTS aside{width: 100% !important;}
     #topMenuFrame{ margin-top:1em}
     .menuBtn{height: 3em; }
 
@@ -304,6 +293,7 @@ put all your mobile styles above*/
     .pageTitleTXT{
         font-size:1.888em;
     }
+    #AI_PROJECTS{flex-direction: row;}
     #topMenuFrame{ margin-top:0}
     .menuBtn{height: 3em; font-size: 1em;}
     /* .bluesteel-border-frame{

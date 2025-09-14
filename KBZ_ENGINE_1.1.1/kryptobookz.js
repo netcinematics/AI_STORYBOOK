@@ -277,7 +277,6 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
         historyFrame.style.overflow = "hidden";    
         historyFrame.style.marginBottom = "1em";   
         historyFrame.style.borderTop = "none";    //OVERLAP
-// debugger;
         let workbitz = {}, IMGFRAME, IMGBITw = {}, TXTTTL={}, TXTCAPTION={}, TXTSUB={};
         for(let i=0; i<AI_HISTORY.length;i++){
             workbitz = AI_HISTORY[i];
@@ -325,7 +324,7 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
                 IMGFRAME.insertAdjacentElement('beforeend', IMGBITw);
                 if (historyFrame && IMGFRAME) { historyFrame.insertAdjacentElement('beforeend', IMGFRAME); }
             }
-            if(workbitz.TXT){console.log('TXT',workbitz.TXT); //DYNAMIC TEXT
+            if(workbitz.SUB){console.log('TXT',workbitz.TXT); //DYNAMIC TEXT
                 TXTCAPTION = document.createElement('article');
                 TXTCAPTION.style.backgroundColor = 'black';
                 TXTCAPTION.style.border = "1px solid steelblue"
@@ -430,7 +429,7 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
 
         var txtCard1 = 0;
             txtCard1 = document.createElement('footer'); //IMG  //OTHER IMAGE TYPES HERE
-            txtCard1.innerText = "AI OVERVIEW"; //large 600 size
+            txtCard1.innerText = "AI_PROJECTS"; //large 600 size
             txtCard1.style.width = "100%";
             txtCard1.style.maxWidth = "32em"
             txtCard1.style.padding = "2em"
@@ -455,7 +454,7 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
             
         var txtCard3 = 0;
             txtCard3 = document.createElement('footer'); //IMG  //OTHER IMAGE TYPES HERE
-            txtCard3.innerText = "LINKTREE"; //large 600 size
+            txtCard3.innerText ="MOBILE_LINKS"; //large 600 size
             txtCard3.style.width = "100%";
             txtCard3.style.maxWidth = "32em"
             txtCard3.style.padding = "2em"
@@ -465,31 +464,58 @@ const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID,
             txtCard3.style.borderRadius = "18px"
             
             
-    let QRCodeIMG=`<a href="https://linktr.ee/spazefalcon" target="_blank">
-    <img src="./images/qrcode_linktree.png"  style="border-radius:10%;width:80%;max-width:12em;"/>
-    </a>`;
-    let AboutMeTXT=`
-        <aside style="text-align:left;margin:1em;line-height:2em;color:steelblue;">
-            <div><b>AI BANKBOOKS</b></div>
-            <div style="font-size:0.666em; margin-left:20px;"><i>Data VIS | CODE Gen | CoPilot | FIN TECH</i></div>
-            <div><b>AI_STORYBOOK</b></div>
-            <div style="font-size:0.666em; margin-left:20px;"><i>Image Gen | Google Storybook</i></div>
-            <div><b>AI_CREATIVE_DEV</b></div>
-            <div style="font-size:0.666em; margin-left:20px;"><i>Audio/Video Gen | YouTube</i></div>
-            <div><b>NEURAL_NET</b></div>
-            <div style="font-size:0.666em; margin-left:20px;"><i>Data VIS | Gemini | Google Gold Developer </i></div>
-            <div><b>AXI_AI</b></div>
-            <div style="font-size:0.666em; margin-left:20px;"><i>AI ARCHITECT | Hugging Face LLM | Google Research | CoLab</i></div>
-        </aside>
+    let AboutMeTXT2 = `
+    <section style="text-align:center;margin:1em;line-height:2em;color:steelblue;">
+            <div><b>SPAZE FALCON</b></div>
+        <div style="font-size:0.666em; margin-left:20px;"><i>CREATOR | DEVELOPER | ARTIST | ENTREPRENEUR</i></div>
+        <div style="font-size:0.666em; margin-left:20px;"><i>FOUNDER | KRYPTOSPAZE | COZMOCAT STUDIOS</i></div>
+        <div style="font-size:0.666em; margin-left:20px;"><i>CO-FOUNDER | AI BANKBOOKS | AI STORYBOOK | AI CREATIVE DEV</i></div>
+        <div style="font-size:0.666em; margin-left:20px;"><i>CO-FOUNDER | NEURAL NET | AXI AI</i></div>
+        <div style="font-size:0.666em; margin-left:20px;"><i>OPENSEA | RARIBLE | FOUNDATION | MINTABLE</i></div>
+        <div style="font-size:0.666em; margin-left:20px;"><i>TWITTER | INSTAGRAM | LINKTREE | YOUTUBE</i></div>
+        <div style="font-size:0.666em; margin-left:20px;"><i>SPAZE FALCON#1234 DISCORD</i></div>
     </section>
-    `;
+        `;
+
+    let QRCodeIMG=`
+    <a href="https://linktr.ee/spazefalcon" target="_blank">
+    <img src="./images/qrcode_linktree.png"  style="border-radius:10%;width:80%;max-width:12em;"/>
+    </a>
+    <h3>LINKTREE</h3>
+    <a href="https://linktr.ee/spazefalcon" target="_blank">
+    <img src="./images/qrcode_linktree.png"  style="border-radius:10%;width:80%;max-width:12em;"/>
+    </a>
+    <h3>AI_PORTFOLIO</h3>
+            ${AboutMeTXT2}`;
+
+
+    let AIProjectTXT=`
+    <section id="AI_PROJECTS" style="display: flex;line-height:2em;color:steelblue;">
+        <aside style="text-align:left;margin:1em;line-height:2em;color:steelblue;width: 50%;">
+            <div><b>AXI_AI</b> | 2018 ~ 2025</div>
+            <div style="margin-left:20px; margin-bottom: 20px;"><i>AI ARCHITECT | Hugging Face LLM | Google Research | CoLab | Python</i></div>
+            <div><b>NEURAL_NET</b> | 2023 ~ 2024</div>
+            <div style="margin-left:20px;"><i>Data VIS | Gemini | Google Gold Developer </i></div>
+            <div style="margin-left:20px; margin-bottom: 20px;"><i>TensorFlow | AIWeb Training | Google Cloud</i></div>
+        </aside>
+        <aside style="text-align:left;margin:1em;line-height:2em;color:steelblue;width: 50%;">
+            <div><b>AI_CREATIVE_DEV</b> | ~ 2025</div>
+            <div style="margin-left:20px; margin-bottom: 20px;"><i>Audio/Video Gen | YouTube</i></div>
+            <div><b>AI_STORYBOOK</b> | 2020 ~ 2025</div>
+            <div style="margin-left:20px;margin-bottom: 20px;"><i>Image Gen | Google Storybook</i></div>
+            <div><b>AI BANKBOOKS</b> | ~ 2024</div>
+            <div style="margin-left:20px; margin-bottom: 20px;"><i>Data VIS | CODE Gen | CoPilot | FIN TECH</i></div>
+        </aside>
+
+
+    </section>`;
 
         KRYPTOBOOKFrame1.innerHTML = ''; //blank out
         if(txtCard1 && TXTFRAME){TXTFRAME.insertAdjacentElement('afterbegin', txtCard1);}
         if(txtCard2 && TXTFRAME2){TXTFRAME2.insertAdjacentElement('afterbegin', txtCard2);}
         if(txtCard3 && TXTFRAME3){TXTFRAME3.insertAdjacentElement('afterbegin', txtCard3);}
         if(QRCodeFRAME){QRCodeFRAME.innerHTML = QRCodeIMG;}
-        if(MeTXTFRAME){MeTXTFRAME.innerHTML = AboutMeTXT;}
+        if(MeTXTFRAME){MeTXTFRAME.innerHTML = AIProjectTXT;}
         if (pageFrame && TXTFRAME) { pageFrame.insertAdjacentElement('beforeend', TXTFRAME); }
         if (pageFrame) { pageFrame.insertAdjacentElement('beforeend', MeTXTFRAME); }
         if (pageFrame && TXTFRAME2) { pageFrame.insertAdjacentElement('beforeend', TXTFRAME2); }
@@ -694,34 +720,26 @@ As he wipes dust from Orby's eye.
 ];
 
 let AI_HISTORY = [
-    {TTL:"Embedding Matrix VIZ",TXT:"0",
-     IMG:"./assets/img/1.png",SUB:"3D interactive data viz of embed matrix, using Tensorflow.js and Three.js"},
-    {IMG:"./assets/img/2.png",
-     TXT:"1",SUB:"aabcd"},
-    {IMG:"./assets/img/3.png",
-     TXT:"2",SUB:"aabcd"},
+    {TTL:"AI_NEURAL_NET",SUB:"3D interactive viz of embed matrix, TensorFlow, Three.js, WebGL, WebAI",
+     IMG:"./assets/img/1.png"},
+    {IMG:"./assets/img/2.png",SUB:"AI_BRAIN_VIZ: CoPilot, VSCode, VIBE, WebAI"},
+    {IMG:"./assets/img/3.png",SUB:"AI: Neural_Net, interactive 3D viz Web APP, movie player."},
     {TTL:"CORPUS VIZ",
-     IMG:"./assets/img/4.png",
-     TXT:"4",SUB:"aabcd"},
-    {IMG:"./assets/img/5.png",
-     TXT:"5",SUB:"aabcd"},
-    {IMG:"./assets/img/6.png",
-     TXT:"6",SUB:"aabcd"},
-    {IMG:"./assets/img/7.png"},
-    {IMG:"./assets/img/8.png",
-     TXT:"7",SUB:"aabcd"},
-    {TTL:"ccc",
-     IMG:"./assets/img/9.png",
-     TXT:"8",SUB:"aabcd"},
-    {IMG:"./assets/img/10.png",
-     TXT:"9",SUB:"aabcd"},
-    {IMG:"./assets/img/11.png",SUB:"aabcd"},
-    {IMG:"./assets/img/12.png",SUB:"aabcd"},
-    {IMG:"./assets/img/13.png",SUB:"aabcd"},
-    {IMG:"./assets/img/14.png",SUB:"aabcd"},
-    {IMG:"./assets/img/15.png",SUB:"aabcd"},
-    {IMG:"./assets/img/16.png",SUB:"aabcd"},
-    {IMG:"./assets/img/17.png",SUB:"aabcd"},
+     IMG:"./assets/img/4.png",SUB:"D3.js force directed graph of  custom text corpus."},
+    {IMG:"./assets/img/5.png",SUB:"Exploring TensorFlow Embeddings, PCA, T-SNE"},
+    {IMG:"./assets/img/6.png",SUB:"AI: FINE-TUINING, Trainer Modules"},
+    {IMG:"./assets/img/7.png",SUB:"AI_Neural Net Trainer, plays 10,000 EPOCH like movie."},
+    {IMG:"./assets/img/8.png",SUB:"AI: SPEECH to TEXT, dictation device, VIBE APP."},
+    {TTL:"GOOGLE CLOUD DEV:",
+     IMG:"./assets/img/9.png",SUB:"Top developer 2023, Vertex AI, Gemini, CoLab, LLM, TensorFlow"},
+    {IMG:"./assets/img/10.png",SUB:""},
+    {IMG:"./assets/img/11.png",SUB:""},
+    {IMG:"./assets/img/12.png",SUB:"A few examples of many training badges."},
+    {TTL: "AI_BANKBOOKZ",IMG:"./assets/img/14.png",SUB:"VIBE coded FIN TECH, CoPilot, Web3, API"},
+    {IMG:"./assets/img/15.png",SUB:"AI Gen, many advanced charts, graphs, and data viz."},
+    {IMG:"./assets/img/13.png",SUB:"IMPRESSIVE MARGINS!"},
+    {IMG:"./assets/img/16.png",SUB:"IMPRESSIVE UI to track and manage finances."},
+    {IMG:"./assets/img/17.png",SUB:"AI_MATRIX: THE END!"},
 ];
 
 function nextPage(){
